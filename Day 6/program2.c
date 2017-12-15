@@ -67,7 +67,7 @@ void balanceBlocks(int *banks, int size){
 
 }
 
-int stepsToDetectLoop(int *banks, int size){
+int loopSize(int *banks, int size){
   int steps = 0,
       loop = 0,
       i = 0,
@@ -90,7 +90,7 @@ int stepsToDetectLoop(int *banks, int size){
 
   }
 
-  return steps;
+  return steps - i + 1;
 }
 
 int main(){
@@ -113,6 +113,6 @@ int main(){
     }
   }
 
-  printf("%d", stepsToDetectLoop(banks, i));
+  printf("%d", loopSize(banks, i));
 
 }
